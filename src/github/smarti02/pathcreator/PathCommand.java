@@ -24,17 +24,18 @@ public class PathCommand implements CommandExecutor{
 			return true;
 		}
 		
-		if(PathCreatorPlugin.controller.hasPlayer((Player)sender)){
+		if(PathCreatorPlugin.controller.hasPlayer((Player)sender) && args.length == 0){
 			PathCreatorPlugin.controller.removePlayer((Player)sender);
 			sender.sendMessage("Path stopped");
 		}else{
 			// /path [block] [radius] 
 			if(args.length != 2){
-				sender.sendMessage("Not enough arguments.");
+				sender.sendMessage("Incorrect number of arguments.");
 				return false;
 			}
 			
 			String[] split = args[0].split(":");
+			
 			//get the Material
 			Material material = Material.getMaterial(replaceusrInput(split[0]).toUpperCase());
 			
