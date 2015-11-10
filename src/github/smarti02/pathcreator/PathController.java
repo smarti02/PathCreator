@@ -15,7 +15,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 public class PathController implements Listener{
-	private Material[] doNotReplace = {Material.AIR, Material.WATER, Material.STATIONARY_WATER,
+	public final Material[] doNotReplace = {Material.AIR, Material.WATER, Material.STATIONARY_WATER,
 			Material.DOUBLE_PLANT, Material.YELLOW_FLOWER, Material.RED_ROSE, Material.CACTUS,
 			Material.LONG_GRASS, Material.ARROW, Material.BIRCH_DOOR, Material.ACACIA_DOOR, 
 			Material.DARK_OAK_DOOR, Material.IRON_DOOR, Material.JUNGLE_DOOR, 

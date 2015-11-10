@@ -1,6 +1,8 @@
 package github.smarti02.pathcreator;
 
 
+import java.util.Arrays;
+
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,9 +15,6 @@ import org.bukkit.entity.Player;
  */
 public class PathCommand implements CommandExecutor{
 	
-	/* (non-Javadoc)
-	 * @see org.bukkit.command.CommandExecutor#onCommand(org.bukkit.command.CommandSender, org.bukkit.command.Command, java.lang.String, java.lang.String[])
-	 */
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		//Must be a player to use path
@@ -61,6 +60,11 @@ public class PathCommand implements CommandExecutor{
 			
 			if(radius < 0 ){
 				sender.sendMessage("Radius must be at least 0");
+				return true;
+			}
+			
+			if(Arrays.asList(PathCreatorPlugin.controller.doNotReplace).contains(material)){
+				sender.sendMessage("Cannot create a path with "+split[0]);
 				return true;
 			}
 			
