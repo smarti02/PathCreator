@@ -1,0 +1,7 @@
+name: PathCreator
+main: github.smarti02.pathcreator.PathCreatorPlugin
+version: 1.0
+commands:
+    path:
+        usage: /path [material] [radius]
+        description: Toggles path creation under the feet of player
